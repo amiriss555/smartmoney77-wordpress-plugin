@@ -93,15 +93,21 @@ class SM77_Block {
 			$lang = 'en';
 		}
 
-		// Height logic.
+		// Height logic: 1) block param, 2) settings default, 3) per-calculator.
 		$scenarios_enabled = ! empty( $scenarios );
+		$settings          = get_option( 'sm77_settings', sm77_get_defaults() );
 		if ( 0 === $height ) {
-			$height = $scenarios_enabled ? 1200 : $calc['height'];
+			if ( $scenarios_enabled ) {
+				$height = 1200;
+			} elseif ( ! empty( $settings['default_height'] ) && absint( $settings['default_height'] ) > 0 ) {
+				$height = absint( $settings['default_height'] );
+			} else {
+				$height = $calc['height'];
+			}
 		}
 
 		// Currency fallback.
 		if ( empty( $currency ) ) {
-			$settings = get_option( 'sm77_settings', sm77_get_defaults() );
 			$currency = isset( $settings['default_currency'] ) ? sanitize_text_field( $settings['default_currency'] ) : '';
 		}
 
@@ -120,7 +126,6 @@ class SM77_Block {
 		$output .= '</iframe>';
 
 		// Credit link — check per-block override, else use global setting.
-		$settings    = get_option( 'sm77_settings', sm77_get_defaults() );
 		if ( null !== $show_credit_override ) {
 			$show_credit = (bool) $show_credit_override;
 		} else {
