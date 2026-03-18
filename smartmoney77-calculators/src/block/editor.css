@@ -1,0 +1,18 @@
+/**
+ * SmartMoney77 Calculator Block — Editor Styles
+ *
+ * @package SmartMoney77_Calculators
+ * @license GPL-2.0-or-later
+ */
+
+.sm77-block-preview {
+	min-height: 200px;
+}
+
+.sm77-block-preview .sm77-calculator-wrap {
+	pointer-events: none;
+}
+
+.sm77-block-preview iframe {
+	max-width: 100%;
+}
