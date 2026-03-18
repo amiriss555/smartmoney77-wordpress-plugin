@@ -103,11 +103,13 @@ class SM77_Shortcode {
 		// Scenarios.
 		$scenarios = ( ! empty( $atts['scenarios'] ) && '1' === $atts['scenarios'] );
 
-		// Determine height.
+		// Determine height: 1) shortcode param, 2) settings default, 3) per-calculator.
 		$height = absint( $atts['height'] );
 		if ( 0 === $height ) {
 			if ( $scenarios ) {
 				$height = 1200;
+			} elseif ( ! empty( $settings['default_height'] ) && absint( $settings['default_height'] ) > 0 ) {
+				$height = absint( $settings['default_height'] );
 			} else {
 				$height = $calc['height'];
 			}
