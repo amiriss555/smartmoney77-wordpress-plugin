@@ -285,6 +285,44 @@ class SM77_Settings {
 				</tbody>
 			</table>
 
+			<h3><?php esc_html_e( 'Height Guide', 'smartmoney77-calculators' ); ?></h3>
+			<p>
+				<?php
+				printf(
+					/* translators: %s: shortcode example */
+					__( 'Each calculator has a default height that displays without internal scrolling. You can override the height per calculator using the shortcode height parameter, for example: %s', 'smartmoney77-calculators' ),
+					'<code>[smartmoney77 calculator="fire-number" height="1400"]</code>'
+				);
+				?>
+			</p>
+			<table class="widefat" style="max-width:600px">
+				<thead><tr><th><?php esc_html_e( 'Calculator', 'smartmoney77-calculators' ); ?></th><th><?php esc_html_e( 'Default Height', 'smartmoney77-calculators' ); ?></th><th><?php esc_html_e( 'With Scenarios', 'smartmoney77-calculators' ); ?></th></tr></thead>
+				<tbody>
+					<tr><td>&#9749; Latte Factor</td><td>1100px</td><td>1500px</td></tr>
+					<tr><td>&#128293; FIRE Number</td><td>1200px</td><td>1600px</td></tr>
+					<tr><td>&#9200; Cost of Waiting</td><td>1100px</td><td>1500px</td></tr>
+					<tr><td>&#128176; Young Millionaire</td><td>1100px</td><td>1500px</td></tr>
+					<tr><td>&#128201; Inflation Check</td><td>1100px</td><td>1500px</td></tr>
+					<tr><td>&#128200; Compound Interest</td><td>1100px</td><td>1500px</td></tr>
+					<tr><td>&#127974; Killer Fees</td><td>1200px</td><td>1600px</td></tr>
+					<tr><td>&#127891; Education ROI</td><td>1200px</td><td>1600px</td></tr>
+					<tr><td>&#9201;&#65039; Work Hours</td><td>1100px</td><td>1500px</td></tr>
+					<tr><td>&#127968; Housing vs. Stocks</td><td>1200px</td><td>1600px</td></tr>
+					<tr><td>&#9992;&#65039; Digital Nomad</td><td>1100px</td><td>1500px</td></tr>
+					<tr><td>&#128332; Zakat Calculator</td><td>1200px</td><td>1600px</td></tr>
+					<tr><td>&#128179; Credit Card</td><td>1200px</td><td>1600px</td></tr>
+					<tr><td>&#128737;&#65039; Emergency Fund</td><td>1200px</td><td>1600px</td></tr>
+				</tbody>
+			</table>
+
+			<h3><?php echo esc_html__( 'Security & Privacy', 'smartmoney77-calculators' ); ?></h3>
+			<p><?php esc_html_e( 'SmartMoney77 calculators load via iframe from smartmoney77.com. No personal data is collected or transmitted from your WordPress site. The calculators run entirely in the visitor\'s browser. All calculator code is open and inspectable.', 'smartmoney77-calculators' ); ?></p>
+			<p>
+				<a href="https://smartmoney77.com/en/privacy" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Privacy Policy', 'smartmoney77-calculators' ); ?></a>
+				|
+				<a href="https://smartmoney77.com/en/terms" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Terms of Service', 'smartmoney77-calculators' ); ?></a>
+			</p>
+
 			<p style="margin-top:16px;color:#646970;">
 				<?php
 				/* translators: %s: plugin version */
