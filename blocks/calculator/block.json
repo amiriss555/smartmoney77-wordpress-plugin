@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "smartmoney77/calculator",
+    "version": "2.0.0",
+    "title": "SmartMoney77 Calculator",
+    "category": "embed",
+    "icon": "calculator",
+    "description": "Embed free financial calculators from SmartMoney77",
+    "keywords": ["calculator", "financial", "compound interest", "fire", "embed", "stocks", "crypto", "bitcoin", "gold"],
+    "textdomain": "smartmoney77-embed",
+    "attributes": {
+        "calculator": { "type": "string", "default": "" },
+        "lang": { "type": "string", "default": "auto" },
+        "height": { "type": "number", "default": 0 },
+        "currency": { "type": "string", "default": "" },
+        "showCredit": { "type": "boolean", "default": true }
+    },
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css"
+}

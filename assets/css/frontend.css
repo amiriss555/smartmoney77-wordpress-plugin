@@ -1,0 +1,12 @@
+.sm77-calculator-wrap {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.sm77-calculator-wrap iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
