@@ -1,0 +1,219 @@
+# Copyright (C) 2024 SmartMoney77
+# This file is distributed under the same license as the SmartMoney77 Embed plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: SmartMoney77 Embed 2.0.0\n"
+"Report-Msgid-Bugs-To: https://smartmoney77.com\n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Hindi <LL@li.org>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/admin.php
+msgid "SmartMoney77 Settings"
+msgstr "SmartMoney77 सेटिंग्स"
+
+#: includes/admin.php
+msgid "SmartMoney77"
+msgstr "SmartMoney77"
+
+#: includes/admin.php
+msgid "Default Settings"
+msgstr "डिफ़ॉल्ट सेटिंग्स"
+
+#: includes/admin.php
+msgid "Configure the default settings for embedded calculators. These can be overridden per shortcode or block."
+msgstr "एम्बेडेड कैलकुलेटर के लिए डिफ़ॉल्ट सेटिंग्स कॉन्फ़िगर करें। इन्हें शॉर्टकोड या ब्लॉक में ओवरराइड किया जा सकता है।"
+
+#: includes/admin.php
+msgid "Default Language"
+msgstr "डिफ़ॉल्ट भाषा"
+
+#: includes/admin.php
+msgid "Auto-detect from WordPress locale"
+msgstr "वर्डप्रेस भाषा से स्वतः पता लगाएं"
+
+#: includes/admin.php
+msgid "Default Height (px)"
+msgstr "डिफ़ॉल्ट ऊंचाई (px)"
+
+#: includes/admin.php
+msgid "Default iframe height in pixels. Each calculator has its own recommended height which takes priority unless overridden."
+msgstr "पिक्सेल में डिफ़ॉल्ट iframe ऊंचाई। प्रत्येक कैलकुलेटर की अपनी अनुशंसित ऊंचाई होती है।"
+
+#: includes/admin.php
+msgid "Show Credit Link"
+msgstr "क्रेडिट लिंक दिखाएं"
+
+#: includes/admin.php
+msgid "Display \"Powered by SmartMoney77\" below embedded calculators (required by SmartMoney77 embed terms)"
+msgstr "कैलकुलेटर के नीचे \"SmartMoney77 द्वारा संचालित\" प्रदर्शित करें"
+
+#: includes/admin.php
+msgid "Default Currency"
+msgstr "डिफ़ॉल्ट मुद्रा"
+
+#: includes/admin.php
+msgid "Leave empty for auto-detect"
+msgstr "स्वतः पता लगाने के लिए खाली छोड़ें"
+
+#: includes/admin.php
+msgid "Currency code such as SAR, GBP, EUR, BRL, INR."
+msgstr "मुद्रा कोड जैसे SAR, GBP, EUR, BRL, INR।"
+
+#: includes/admin.php
+msgid "Available Calculators"
+msgstr "उपलब्ध कैलकुलेटर"
+
+#: includes/admin.php
+msgid "Calculator"
+msgstr "कैलकुलेटर"
+
+#: includes/admin.php
+msgid "Slug"
+msgstr "स्लग"
+
+#: includes/admin.php
+msgid "Languages"
+msgstr "भाषाएं"
+
+#: includes/admin.php
+msgid "Embed free financial calculators from SmartMoney77 on your WordPress site."
+msgstr "अपनी वर्डप्रेस साइट पर SmartMoney77 के मुफ्त वित्तीय कैलकुलेटर एम्बेड करें।"
+
+#: includes/admin.php
+msgid "Shortcode example:"
+msgstr "शॉर्टकोड उदाहरण:"
+
+#: includes/admin.php
+msgid "Browse all calculators"
+msgstr "सभी कैलकुलेटर देखें"
+
+#: includes/admin.php
+msgid "Embed information"
+msgstr "एम्बेड जानकारी"
+
+#: includes/admin.php
+msgid "Security & Privacy"
+msgstr "सुरक्षा और गोपनीयता"
+
+#: includes/admin.php
+msgid "SmartMoney77 calculators load via iframe from smartmoney77.com. No personal data is collected or transmitted from your WordPress site."
+msgstr "SmartMoney77 कैलकुलेटर smartmoney77.com से iframe के माध्यम से लोड होते हैं। आपकी वर्डप्रेस साइट से कोई व्यक्तिगत डेटा एकत्र या प्रेषित नहीं किया जाता।"
+
+#: includes/admin.php
+msgid "Privacy Policy"
+msgstr "गोपनीयता नीति"
+
+#: includes/admin.php
+msgid "Terms of Service"
+msgstr "सेवा की शर्तें"
+
+#: includes/admin.php
+msgid "SmartMoney77 Financial Calculators v%s"
+msgstr "SmartMoney77 Financial Calculators v%s"
+
+#: includes/admin.php
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+#: includes/shortcode.php
+msgid "Powered by"
+msgstr "द्वारा संचालित"
+
+#: includes/shortcode.php
+msgid "SmartMoney77: Please specify a valid calculator."
+msgstr "SmartMoney77: कृपया एक मान्य कैलकुलेटर निर्दिष्ट करें।"
+
+#: includes/block.php
+msgid "SmartMoney77: Please select a calculator in the block settings."
+msgstr "SmartMoney77: कृपया ब्लॉक सेटिंग्स में एक कैलकुलेटर चुनें।"
+
+#: includes/admin.php
+msgid "Financial Planning"
+msgstr "वित्तीय योजना"
+
+#: includes/admin.php
+msgid "Stocks & Indices"
+msgstr "स्टॉक और सूचकांक"
+
+#: includes/admin.php
+msgid "Crypto"
+msgstr "क्रिप्टो"
+
+#: includes/admin.php
+msgid "Commodities"
+msgstr "कमोडिटीज़"
+
+#: includes/admin.php
+msgid "Other"
+msgstr "अन्य"
+
+#: src/edit.js
+msgid "— Select a calculator —"
+msgstr "— कैलकुलेटर चुनें —"
+
+#: src/edit.js
+msgid "Auto-detect (recommended)"
+msgstr "स्वतः पता लगाएं (अनुशंसित)"
+
+#: src/edit.js
+msgid "Hebrew"
+msgstr "हिब्रू"
+
+#: src/edit.js
+msgid "English"
+msgstr "अंग्रेज़ी"
+
+#: src/edit.js
+msgid "Arabic"
+msgstr "अरबी"
+
+#: src/edit.js
+msgid "Spanish"
+msgstr "स्पेनिश"
+
+#: src/edit.js
+msgid "Portuguese"
+msgstr "पुर्तगाली"
+
+#: src/edit.js
+msgid "English (India)"
+msgstr "अंग्रेज़ी (भारत)"
+
+#: src/edit.js
+msgid "Calculator Settings"
+msgstr "कैलकुलेटर सेटिंग्स"
+
+#: src/edit.js
+msgid "Language"
+msgstr "भाषा"
+
+#: src/edit.js
+msgid "Height"
+msgstr "ऊंचाई"
+
+#: src/edit.js
+msgid "Auto (recommended)"
+msgstr "स्वचालित (अनुशंसित)"
+
+#: src/edit.js
+msgid "e.g., SAR, GBP, EUR"
+msgstr "उदा., SAR, GBP, EUR"
+
+#: src/edit.js
+msgid "Display \"Powered by SmartMoney77\" below the calculator."
+msgstr "कैलकुलेटर के नीचे \"SmartMoney77 द्वारा संचालित\" प्रदर्शित करें।"
+
+#: src/edit.js
+msgid "Select a financial calculator from the block settings panel on the right."
+msgstr "दाईं ओर सेटिंग्स पैनल से एक वित्तीय कैलकुलेटर चुनें।"
+
+#: src/edit.js
+msgid "This calculator does not support the selected language. It will fall back to English."
+msgstr "यह कैलकुलेटर चयनित भाषा का समर्थन नहीं करता। अंग्रेज़ी का उपयोग किया जाएगा।"

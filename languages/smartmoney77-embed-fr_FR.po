@@ -1,0 +1,219 @@
+# Copyright (C) 2024 SmartMoney77
+# This file is distributed under the same license as the SmartMoney77 Embed plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: SmartMoney77 Embed 2.0.0\n"
+"Report-Msgid-Bugs-To: https://smartmoney77.com\n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <LL@li.org>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/admin.php
+msgid "SmartMoney77 Settings"
+msgstr "Paramètres SmartMoney77"
+
+#: includes/admin.php
+msgid "SmartMoney77"
+msgstr "SmartMoney77"
+
+#: includes/admin.php
+msgid "Default Settings"
+msgstr "Paramètres par défaut"
+
+#: includes/admin.php
+msgid "Configure the default settings for embedded calculators. These can be overridden per shortcode or block."
+msgstr "Configurez les paramètres par défaut des calculatrices intégrées. Ils peuvent être remplacés par shortcode ou bloc."
+
+#: includes/admin.php
+msgid "Default Language"
+msgstr "Langue par défaut"
+
+#: includes/admin.php
+msgid "Auto-detect from WordPress locale"
+msgstr "Détection automatique de la langue WordPress"
+
+#: includes/admin.php
+msgid "Default Height (px)"
+msgstr "Hauteur par défaut (px)"
+
+#: includes/admin.php
+msgid "Default iframe height in pixels. Each calculator has its own recommended height which takes priority unless overridden."
+msgstr "Hauteur par défaut de l'iframe en pixels. Chaque calculatrice a sa propre hauteur recommandée."
+
+#: includes/admin.php
+msgid "Show Credit Link"
+msgstr "Afficher le lien de crédit"
+
+#: includes/admin.php
+msgid "Display \"Powered by SmartMoney77\" below embedded calculators (required by SmartMoney77 embed terms)"
+msgstr "Afficher \"Propulsé par SmartMoney77\" sous les calculatrices intégrées"
+
+#: includes/admin.php
+msgid "Default Currency"
+msgstr "Devise par défaut"
+
+#: includes/admin.php
+msgid "Leave empty for auto-detect"
+msgstr "Laisser vide pour la détection automatique"
+
+#: includes/admin.php
+msgid "Currency code such as SAR, GBP, EUR, BRL, INR."
+msgstr "Code de devise comme SAR, GBP, EUR, BRL, INR."
+
+#: includes/admin.php
+msgid "Available Calculators"
+msgstr "Calculatrices disponibles"
+
+#: includes/admin.php
+msgid "Calculator"
+msgstr "Calculatrice"
+
+#: includes/admin.php
+msgid "Slug"
+msgstr "Slug"
+
+#: includes/admin.php
+msgid "Languages"
+msgstr "Langues"
+
+#: includes/admin.php
+msgid "Embed free financial calculators from SmartMoney77 on your WordPress site."
+msgstr "Intégrez des calculatrices financières gratuites de SmartMoney77 sur votre site WordPress."
+
+#: includes/admin.php
+msgid "Shortcode example:"
+msgstr "Exemple de shortcode :"
+
+#: includes/admin.php
+msgid "Browse all calculators"
+msgstr "Parcourir toutes les calculatrices"
+
+#: includes/admin.php
+msgid "Embed information"
+msgstr "Informations d'intégration"
+
+#: includes/admin.php
+msgid "Security & Privacy"
+msgstr "Sécurité et confidentialité"
+
+#: includes/admin.php
+msgid "SmartMoney77 calculators load via iframe from smartmoney77.com. No personal data is collected or transmitted from your WordPress site."
+msgstr "Les calculatrices SmartMoney77 se chargent via iframe depuis smartmoney77.com. Aucune donnée personnelle n'est collectée ou transmise depuis votre site WordPress."
+
+#: includes/admin.php
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: includes/admin.php
+msgid "Terms of Service"
+msgstr "Conditions d'utilisation"
+
+#: includes/admin.php
+msgid "SmartMoney77 Financial Calculators v%s"
+msgstr "SmartMoney77 Financial Calculators v%s"
+
+#: includes/admin.php
+msgid "Settings"
+msgstr "Paramètres"
+
+#: includes/shortcode.php
+msgid "Powered by"
+msgstr "Propulsé par"
+
+#: includes/shortcode.php
+msgid "SmartMoney77: Please specify a valid calculator."
+msgstr "SmartMoney77 : Veuillez spécifier une calculatrice valide."
+
+#: includes/block.php
+msgid "SmartMoney77: Please select a calculator in the block settings."
+msgstr "SmartMoney77 : Veuillez sélectionner une calculatrice dans les paramètres du bloc."
+
+#: includes/admin.php
+msgid "Financial Planning"
+msgstr "Planification financière"
+
+#: includes/admin.php
+msgid "Stocks & Indices"
+msgstr "Actions et indices"
+
+#: includes/admin.php
+msgid "Crypto"
+msgstr "Crypto-monnaies"
+
+#: includes/admin.php
+msgid "Commodities"
+msgstr "Matières premières"
+
+#: includes/admin.php
+msgid "Other"
+msgstr "Autres"
+
+#: src/edit.js
+msgid "— Select a calculator —"
+msgstr "— Sélectionner une calculatrice —"
+
+#: src/edit.js
+msgid "Auto-detect (recommended)"
+msgstr "Détection automatique (recommandé)"
+
+#: src/edit.js
+msgid "Hebrew"
+msgstr "Hébreu"
+
+#: src/edit.js
+msgid "English"
+msgstr "Anglais"
+
+#: src/edit.js
+msgid "Arabic"
+msgstr "Arabe"
+
+#: src/edit.js
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: src/edit.js
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: src/edit.js
+msgid "English (India)"
+msgstr "Anglais (Inde)"
+
+#: src/edit.js
+msgid "Calculator Settings"
+msgstr "Paramètres de la calculatrice"
+
+#: src/edit.js
+msgid "Language"
+msgstr "Langue"
+
+#: src/edit.js
+msgid "Height"
+msgstr "Hauteur"
+
+#: src/edit.js
+msgid "Auto (recommended)"
+msgstr "Automatique (recommandé)"
+
+#: src/edit.js
+msgid "e.g., SAR, GBP, EUR"
+msgstr "Ex., SAR, GBP, EUR"
+
+#: src/edit.js
+msgid "Display \"Powered by SmartMoney77\" below the calculator."
+msgstr "Afficher \"Propulsé par SmartMoney77\" sous la calculatrice."
+
+#: src/edit.js
+msgid "Select a financial calculator from the block settings panel on the right."
+msgstr "Sélectionnez une calculatrice financière dans le panneau de paramètres à droite."
+
+#: src/edit.js
+msgid "This calculator does not support the selected language. It will fall back to English."
+msgstr "Cette calculatrice ne prend pas en charge la langue sélectionnée. L'anglais sera utilisé."
