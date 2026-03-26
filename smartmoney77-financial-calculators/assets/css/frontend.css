@@ -1,0 +1,18 @@
+/**
+ * SmartMoney77 Calculator — Frontend Styles
+ *
+ * @package SmartMoney77_Calculators
+ * @license GPL-2.0-or-later
+ */
+
+.sm77-calculator-wrap {
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.sm77-calculator-wrap iframe {
+	display: block;
+	max-width: 100%;
+}
