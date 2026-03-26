@@ -11,7 +11,7 @@
  * Author URI:        https://smartmoney77.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       smartmoney77-calculators
+ * Text Domain:       smartmoney77-financial-calculators
  * Domain Path:       /languages
  *
  * @package SmartMoney77_Calculators
@@ -84,7 +84,7 @@ add_action( 'wp_enqueue_scripts', 'sm77_enqueue_frontend_styles' );
  */
 function sm77_plugin_action_links( $links ) {
 	$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=smartmoney77' ) ) . '">'
-		. esc_html__( 'Settings', 'smartmoney77-calculators' ) . '</a>';
+		. esc_html__( 'Settings', 'smartmoney77-financial-calculators' ) . '</a>';
 	array_unshift( $links, $settings_link );
 	return $links;
 }

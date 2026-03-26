@@ -69,7 +69,7 @@ class SM77_Shortcode {
 				return '<p style="color:#d63638;font-weight:bold;">'
 					. esc_html__(
 						'SmartMoney77: Please specify a valid calculator. See Settings &rarr; SmartMoney77 for available options.',
-						'smartmoney77-calculators'
+						'smartmoney77-financial-calculators'
 					)
 					. '</p>';
 			}
@@ -142,7 +142,7 @@ class SM77_Shortcode {
 		$show_credit = ! isset( $settings['show_credit'] ) || ! empty( $settings['show_credit'] );
 		if ( $show_credit ) {
 			$output .= '<p style="text-align:center;margin-top:8px;font-size:13px;opacity:0.7;">';
-			$output .= esc_html__( 'Powered by', 'smartmoney77-calculators' ) . ' ';
+			$output .= esc_html__( 'Powered by', 'smartmoney77-financial-calculators' ) . ' ';
 			$output .= '<a href="' . esc_url( 'https://smartmoney77.com' ) . '" target="_blank" rel="noopener noreferrer">SmartMoney77</a>';
 			$output .= '</p>';
 		}

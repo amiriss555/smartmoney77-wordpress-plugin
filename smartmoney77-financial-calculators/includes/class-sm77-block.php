@@ -76,7 +76,7 @@ class SM77_Block {
 				return '<p style="color:#d63638;font-weight:bold;">'
 					. esc_html__(
 						'SmartMoney77: Please select a calculator in the block settings.',
-						'smartmoney77-calculators'
+						'smartmoney77-financial-calculators'
 					)
 					. '</p>';
 			}
@@ -134,7 +134,7 @@ class SM77_Block {
 
 		if ( $show_credit ) {
 			$output .= '<p style="text-align:center;margin-top:8px;font-size:13px;opacity:0.7;">';
-			$output .= esc_html__( 'Powered by', 'smartmoney77-calculators' ) . ' ';
+			$output .= esc_html__( 'Powered by', 'smartmoney77-financial-calculators' ) . ' ';
 			$output .= '<a href="' . esc_url( 'https://smartmoney77.com' ) . '" target="_blank" rel="noopener noreferrer">SmartMoney77</a>';
 			$output .= '</p>';
 		}

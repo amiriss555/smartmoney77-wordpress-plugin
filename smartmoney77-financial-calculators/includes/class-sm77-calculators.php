@@ -139,12 +139,12 @@ function sm77_get_calculators() {
  */
 function sm77_get_languages() {
 	return array(
-		'he' => __( 'Hebrew', 'smartmoney77-calculators' ),
-		'en' => __( 'English', 'smartmoney77-calculators' ),
-		'ar' => __( 'Arabic', 'smartmoney77-calculators' ),
-		'es' => __( 'Spanish', 'smartmoney77-calculators' ),
-		'pt' => __( 'Portuguese', 'smartmoney77-calculators' ),
-		'in' => __( 'English (India)', 'smartmoney77-calculators' ),
+		'he' => __( 'Hebrew', 'smartmoney77-financial-calculators' ),
+		'en' => __( 'English', 'smartmoney77-financial-calculators' ),
+		'ar' => __( 'Arabic', 'smartmoney77-financial-calculators' ),
+		'es' => __( 'Spanish', 'smartmoney77-financial-calculators' ),
+		'pt' => __( 'Portuguese', 'smartmoney77-financial-calculators' ),
+		'in' => __( 'English (India)', 'smartmoney77-financial-calculators' ),
 	);
 }
 

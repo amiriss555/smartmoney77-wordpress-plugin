@@ -45,7 +45,7 @@
 	 */
 	function getCalculatorOptions() {
 		var options = [
-			{ label: __( '— Select a calculator —', 'smartmoney77-calculators' ), value: '' }
+			{ label: __( '— Select a calculator —', 'smartmoney77-financial-calculators' ), value: '' }
 		];
 
 		// Financial Planning group.
@@ -62,9 +62,9 @@
 			}
 		} );
 
-		options.push( { label: '— ' + __( 'Financial Planning', 'smartmoney77-calculators' ) + ' —', value: '', disabled: true } );
+		options.push( { label: '— ' + __( 'Financial Planning', 'smartmoney77-financial-calculators' ) + ' —', value: '', disabled: true } );
 		options = options.concat( financialCalcs );
-		options.push( { label: '— ' + __( 'Islamic Finance', 'smartmoney77-calculators' ) + ' —', value: '', disabled: true } );
+		options.push( { label: '— ' + __( 'Islamic Finance', 'smartmoney77-financial-calculators' ) + ' —', value: '', disabled: true } );
 		options = options.concat( islamicCalcs );
 
 		return options;
@@ -74,20 +74,20 @@
 	 * Language options.
 	 */
 	var languageOptions = [
-		{ label: __( 'Auto-detect (recommended)', 'smartmoney77-calculators' ), value: 'auto' },
-		{ label: __( 'Hebrew', 'smartmoney77-calculators' ),         value: 'he' },
-		{ label: __( 'English', 'smartmoney77-calculators' ),        value: 'en' },
-		{ label: __( 'Arabic', 'smartmoney77-calculators' ),         value: 'ar' },
-		{ label: __( 'Spanish', 'smartmoney77-calculators' ),        value: 'es' },
-		{ label: __( 'Portuguese', 'smartmoney77-calculators' ),     value: 'pt' },
-		{ label: __( 'English (India)', 'smartmoney77-calculators' ), value: 'in' }
+		{ label: __( 'Auto-detect (recommended)', 'smartmoney77-financial-calculators' ), value: 'auto' },
+		{ label: __( 'Hebrew', 'smartmoney77-financial-calculators' ),         value: 'he' },
+		{ label: __( 'English', 'smartmoney77-financial-calculators' ),        value: 'en' },
+		{ label: __( 'Arabic', 'smartmoney77-financial-calculators' ),         value: 'ar' },
+		{ label: __( 'Spanish', 'smartmoney77-financial-calculators' ),        value: 'es' },
+		{ label: __( 'Portuguese', 'smartmoney77-financial-calculators' ),     value: 'pt' },
+		{ label: __( 'English (India)', 'smartmoney77-financial-calculators' ), value: 'in' }
 	];
 
 	/**
 	 * Height preset options.
 	 */
 	var heightOptions = [
-		{ label: __( 'Auto (recommended)', 'smartmoney77-calculators' ), value: 0 },
+		{ label: __( 'Auto (recommended)', 'smartmoney77-financial-calculators' ), value: 0 },
 		{ label: '600px', value: 600 },
 		{ label: '700px', value: 700 },
 		{ label: '800px', value: 800 },
@@ -108,7 +108,7 @@
 			var langWarning = '';
 			if ( selectedCalc && lang && lang !== 'auto' ) {
 				if ( selectedCalc.langs.indexOf( lang ) === -1 ) {
-					langWarning = __( 'This calculator does not support the selected language. It will fall back to English.', 'smartmoney77-calculators' );
+					langWarning = __( 'This calculator does not support the selected language. It will fall back to English.', 'smartmoney77-financial-calculators' );
 				}
 			}
 
@@ -117,9 +117,9 @@
 				null,
 				el(
 					PanelBody,
-					{ title: __( 'Calculator Settings', 'smartmoney77-calculators' ), initialOpen: true },
+					{ title: __( 'Calculator Settings', 'smartmoney77-financial-calculators' ), initialOpen: true },
 					el( SelectControl, {
-						label: __( 'Calculator', 'smartmoney77-calculators' ),
+						label: __( 'Calculator', 'smartmoney77-financial-calculators' ),
 						value: calculator,
 						options: getCalculatorOptions(),
 						onChange: function ( val ) {
@@ -127,7 +127,7 @@
 						}
 					} ),
 					el( SelectControl, {
-						label: __( 'Language', 'smartmoney77-calculators' ),
+						label: __( 'Language', 'smartmoney77-financial-calculators' ),
 						value: lang,
 						options: languageOptions,
 						onChange: function ( val ) {
@@ -140,7 +140,7 @@
 						langWarning
 					) : null,
 					el( SelectControl, {
-						label: __( 'Height', 'smartmoney77-calculators' ),
+						label: __( 'Height', 'smartmoney77-financial-calculators' ),
 						value: attributes.height,
 						options: heightOptions,
 						onChange: function ( val ) {
@@ -148,26 +148,26 @@
 						}
 					} ),
 					el( TextControl, {
-						label: __( 'Currency', 'smartmoney77-calculators' ),
+						label: __( 'Currency', 'smartmoney77-financial-calculators' ),
 						value: attributes.currency,
-						placeholder: __( 'e.g., SAR, GBP, EUR', 'smartmoney77-calculators' ),
+						placeholder: __( 'e.g., SAR, GBP, EUR', 'smartmoney77-financial-calculators' ),
 						onChange: function ( val ) {
 							setAttributes( { currency: val } );
 						}
 					} ),
 					el( ToggleControl, {
-						label: __( 'Show Scenarios', 'smartmoney77-calculators' ),
+						label: __( 'Show Scenarios', 'smartmoney77-financial-calculators' ),
 						help: attributes.scenarios
-							? __( 'Scenario sections are enabled. Recommended height: 1200px.', 'smartmoney77-calculators' )
-							: __( 'Enable additional scenario comparison sections.', 'smartmoney77-calculators' ),
+							? __( 'Scenario sections are enabled. Recommended height: 1200px.', 'smartmoney77-financial-calculators' )
+							: __( 'Enable additional scenario comparison sections.', 'smartmoney77-financial-calculators' ),
 						checked: attributes.scenarios,
 						onChange: function ( val ) {
 							setAttributes( { scenarios: val } );
 						}
 					} ),
 					el( ToggleControl, {
-						label: __( 'Show Credit Link', 'smartmoney77-calculators' ),
-						help: __( 'Display "Powered by SmartMoney77" below the calculator.', 'smartmoney77-calculators' ),
+						label: __( 'Show Credit Link', 'smartmoney77-financial-calculators' ),
+						help: __( 'Display "Powered by SmartMoney77" below the calculator.', 'smartmoney77-financial-calculators' ),
 						checked: attributes.showCredit,
 						onChange: function ( val ) {
 							setAttributes( { showCredit: val } );
@@ -186,8 +186,8 @@
 						Placeholder,
 						{
 							icon: 'calculator',
-							label: __( 'SmartMoney77 Calculator', 'smartmoney77-calculators' ),
-							instructions: __( 'Select a financial calculator from the block settings panel on the right.', 'smartmoney77-calculators' )
+							label: __( 'SmartMoney77 Calculator', 'smartmoney77-financial-calculators' ),
+							instructions: __( 'Select a financial calculator from the block settings panel on the right.', 'smartmoney77-financial-calculators' )
 						},
 						el( SelectControl, {
 							value: calculator,

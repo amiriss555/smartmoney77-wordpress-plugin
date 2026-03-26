@@ -8,7 +8,7 @@
 	"icon": "calculator",
 	"description": "Embed a free multilingual financial calculator from SmartMoney77.",
 	"keywords": [ "calculator", "financial", "compound interest", "fire", "embed" ],
-	"textdomain": "smartmoney77-calculators",
+	"textdomain": "smartmoney77-financial-calculators",
 	"attributes": {
 		"calculator": {
 			"type": "string",

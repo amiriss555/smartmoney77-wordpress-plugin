@@ -54,7 +54,7 @@ Use the Gutenberg block (search for "SmartMoney77" in the block inserter) or the
 
 == Installation ==
 
-1. Upload the `smartmoney77-calculators` folder to `/wp-content/plugins/`
+1. Upload the `smartmoney77-financial-calculators` folder to `/wp-content/plugins/`
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to Settings → SmartMoney77 to configure defaults (optional)
 4. Add calculators to any page using the Gutenberg block or shortcode

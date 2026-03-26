@@ -48,8 +48,8 @@ class SM77_Settings {
 	 */
 	public static function add_menu() {
 		add_options_page(
-			__( 'SmartMoney77 Financial Calculators', 'smartmoney77-calculators' ),
-			__( 'SmartMoney77', 'smartmoney77-calculators' ),
+			__( 'SmartMoney77 Financial Calculators', 'smartmoney77-financial-calculators' ),
+			__( 'SmartMoney77', 'smartmoney77-financial-calculators' ),
 			'manage_options',
 			'smartmoney77',
 			array( __CLASS__, 'render_page' )
@@ -74,14 +74,14 @@ class SM77_Settings {
 
 		add_settings_section(
 			'sm77_general',
-			__( 'Default Settings', 'smartmoney77-calculators' ),
+			__( 'Default Settings', 'smartmoney77-financial-calculators' ),
 			array( __CLASS__, 'section_general_cb' ),
 			'smartmoney77'
 		);
 
 		add_settings_field(
 			'sm77_default_lang',
-			__( 'Default Language', 'smartmoney77-calculators' ),
+			__( 'Default Language', 'smartmoney77-financial-calculators' ),
 			array( __CLASS__, 'field_default_lang' ),
 			'smartmoney77',
 			'sm77_general'
@@ -89,7 +89,7 @@ class SM77_Settings {
 
 		add_settings_field(
 			'sm77_default_height',
-			__( 'Default Height (px)', 'smartmoney77-calculators' ),
+			__( 'Default Height (px)', 'smartmoney77-financial-calculators' ),
 			array( __CLASS__, 'field_default_height' ),
 			'smartmoney77',
 			'sm77_general'
@@ -97,7 +97,7 @@ class SM77_Settings {
 
 		add_settings_field(
 			'sm77_show_credit',
-			__( 'Show Credit Link', 'smartmoney77-calculators' ),
+			__( 'Show Credit Link', 'smartmoney77-financial-calculators' ),
 			array( __CLASS__, 'field_show_credit' ),
 			'smartmoney77',
 			'sm77_general'
@@ -105,7 +105,7 @@ class SM77_Settings {
 
 		add_settings_field(
 			'sm77_default_currency',
-			__( 'Default Currency', 'smartmoney77-calculators' ),
+			__( 'Default Currency', 'smartmoney77-financial-calculators' ),
 			array( __CLASS__, 'field_default_currency' ),
 			'smartmoney77',
 			'sm77_general'
@@ -146,7 +146,7 @@ class SM77_Settings {
 	 * @return void
 	 */
 	public static function section_general_cb() {
-		echo '<p>' . esc_html__( 'Configure the default settings for embedded calculators. These can be overridden per shortcode or block.', 'smartmoney77-calculators' ) . '</p>';
+		echo '<p>' . esc_html__( 'Configure the default settings for embedded calculators. These can be overridden per shortcode or block.', 'smartmoney77-financial-calculators' ) . '</p>';
 	}
 
 	/**
@@ -161,7 +161,7 @@ class SM77_Settings {
 		?>
 		<select name="sm77_settings[default_lang]" id="sm77_default_lang">
 			<option value="auto" <?php selected( $current, 'auto' ); ?>>
-				<?php esc_html_e( 'Auto-detect from WordPress locale', 'smartmoney77-calculators' ); ?>
+				<?php esc_html_e( 'Auto-detect from WordPress locale', 'smartmoney77-financial-calculators' ); ?>
 			</option>
 			<?php foreach ( $langs as $code => $label ) : ?>
 				<option value="<?php echo esc_attr( $code ); ?>" <?php selected( $current, $code ); ?>>
@@ -184,7 +184,7 @@ class SM77_Settings {
 		<input type="number" name="sm77_settings[default_height]" id="sm77_default_height"
 			value="<?php echo esc_attr( $height ); ?>" min="400" max="1500" step="50" class="small-text">
 		<p class="description">
-			<?php esc_html_e( 'Default iframe height in pixels. Each calculator has its own recommended height which takes priority unless overridden.', 'smartmoney77-calculators' ); ?>
+			<?php esc_html_e( 'Default iframe height in pixels. Each calculator has its own recommended height which takes priority unless overridden.', 'smartmoney77-financial-calculators' ); ?>
 		</p>
 		<?php
 	}
@@ -201,7 +201,7 @@ class SM77_Settings {
 		<label>
 			<input type="checkbox" name="sm77_settings[show_credit]" id="sm77_show_credit" value="1"
 				<?php checked( $show_credit ); ?>>
-			<?php esc_html_e( 'Display "Powered by SmartMoney77" below embedded calculators (required by SmartMoney77 embed terms)', 'smartmoney77-calculators' ); ?>
+			<?php esc_html_e( 'Display "Powered by SmartMoney77" below embedded calculators (required by SmartMoney77 embed terms)', 'smartmoney77-financial-calculators' ); ?>
 		</label>
 		<?php
 	}
@@ -217,9 +217,9 @@ class SM77_Settings {
 		?>
 		<input type="text" name="sm77_settings[default_currency]" id="sm77_default_currency"
 			value="<?php echo esc_attr( $currency ); ?>" class="regular-text"
-			placeholder="<?php esc_attr_e( 'Leave empty for auto-detect', 'smartmoney77-calculators' ); ?>">
+			placeholder="<?php esc_attr_e( 'Leave empty for auto-detect', 'smartmoney77-financial-calculators' ); ?>">
 		<p class="description">
-			<?php esc_html_e( 'Currency code such as SAR, GBP, EUR, BRL, INR.', 'smartmoney77-calculators' ); ?>
+			<?php esc_html_e( 'Currency code such as SAR, GBP, EUR, BRL, INR.', 'smartmoney77-financial-calculators' ); ?>
 		</p>
 		<?php
 	}
@@ -236,21 +236,21 @@ class SM77_Settings {
 		$calcs = sm77_get_calculators();
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'SmartMoney77 Financial Calculators', 'smartmoney77-calculators' ); ?></h1>
+			<h1><?php esc_html_e( 'SmartMoney77 Financial Calculators', 'smartmoney77-financial-calculators' ); ?></h1>
 
 			<div class="sm77-admin-info" style="background:#fff;border:1px solid #c3c4c7;border-left:4px solid #2271b1;padding:12px 16px;margin:16px 0;">
-				<p><strong><?php esc_html_e( 'Embed free financial calculators from SmartMoney77 on your WordPress site.', 'smartmoney77-calculators' ); ?></strong></p>
+				<p><strong><?php esc_html_e( 'Embed free financial calculators from SmartMoney77 on your WordPress site.', 'smartmoney77-financial-calculators' ); ?></strong></p>
 				<p>
-					<?php esc_html_e( 'Shortcode example:', 'smartmoney77-calculators' ); ?>
+					<?php esc_html_e( 'Shortcode example:', 'smartmoney77-financial-calculators' ); ?>
 					<code>[smartmoney77 calculator="compound-interest"]</code>
 				</p>
 				<p>
 					<a href="<?php echo esc_url( 'https://smartmoney77.com/en/calculators' ); ?>" target="_blank" rel="noopener noreferrer">
-						<?php esc_html_e( 'Browse all calculators', 'smartmoney77-calculators' ); ?>
+						<?php esc_html_e( 'Browse all calculators', 'smartmoney77-financial-calculators' ); ?>
 					</a>
 					&nbsp;|&nbsp;
 					<a href="<?php echo esc_url( 'https://smartmoney77.com/en/embed' ); ?>" target="_blank" rel="noopener noreferrer">
-						<?php esc_html_e( 'Embed information', 'smartmoney77-calculators' ); ?>
+						<?php esc_html_e( 'Embed information', 'smartmoney77-financial-calculators' ); ?>
 					</a>
 				</p>
 			</div>
@@ -263,14 +263,14 @@ class SM77_Settings {
 				?>
 			</form>
 
-			<h2><?php esc_html_e( 'Available Calculators', 'smartmoney77-calculators' ); ?></h2>
+			<h2><?php esc_html_e( 'Available Calculators', 'smartmoney77-financial-calculators' ); ?></h2>
 			<table class="widefat striped" style="max-width:800px;">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Calculator', 'smartmoney77-calculators' ); ?></th>
-						<th><?php esc_html_e( 'Slug', 'smartmoney77-calculators' ); ?></th>
-						<th><?php esc_html_e( 'Height', 'smartmoney77-calculators' ); ?></th>
-						<th><?php esc_html_e( 'Languages', 'smartmoney77-calculators' ); ?></th>
+						<th><?php esc_html_e( 'Calculator', 'smartmoney77-financial-calculators' ); ?></th>
+						<th><?php esc_html_e( 'Slug', 'smartmoney77-financial-calculators' ); ?></th>
+						<th><?php esc_html_e( 'Height', 'smartmoney77-financial-calculators' ); ?></th>
+						<th><?php esc_html_e( 'Languages', 'smartmoney77-financial-calculators' ); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -288,7 +288,7 @@ class SM77_Settings {
 			<p style="margin-top:16px;color:#646970;">
 				<?php
 				/* translators: %s: plugin version */
-				printf( esc_html__( 'SmartMoney77 Financial Calculators v%s', 'smartmoney77-calculators' ), esc_html( SM77_VERSION ) );
+				printf( esc_html__( 'SmartMoney77 Financial Calculators v%s', 'smartmoney77-financial-calculators' ), esc_html( SM77_VERSION ) );
 				?>
 			</p>
 		</div>
