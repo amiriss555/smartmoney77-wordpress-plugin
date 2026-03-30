@@ -129,7 +129,7 @@ class SM77_Block {
 		if ( null !== $show_credit_override ) {
 			$show_credit = (bool) $show_credit_override;
 		} else {
-			$show_credit = ! isset( $settings['show_credit'] ) || ! empty( $settings['show_credit'] );
+			$show_credit = ! empty( $settings['show_credit'] );
 		}
 
 		if ( $show_credit ) {

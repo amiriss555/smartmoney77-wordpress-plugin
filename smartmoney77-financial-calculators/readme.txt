@@ -1,5 +1,5 @@
 === SmartMoney77 Financial Calculators ===
-Contributors: smartmoney77
+Contributors: amiriss, smartmoney77
 Tags: financial calculator, compound interest, fire calculator, investment, embed
 Requires at least: 6.0
 Tested up to: 6.9

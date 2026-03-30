@@ -196,12 +196,12 @@ class SM77_Settings {
 	 */
 	public static function field_show_credit() {
 		$settings    = get_option( 'sm77_settings', sm77_get_defaults() );
-		$show_credit = ! isset( $settings['show_credit'] ) || ! empty( $settings['show_credit'] );
+		$show_credit = ! empty( $settings['show_credit'] );
 		?>
 		<label>
 			<input type="checkbox" name="sm77_settings[show_credit]" id="sm77_show_credit" value="1"
 				<?php checked( $show_credit ); ?>>
-			<?php esc_html_e( 'Display "Powered by SmartMoney77" below embedded calculators (required by SmartMoney77 embed terms)', 'smartmoney77-financial-calculators' ); ?>
+			<?php esc_html_e( 'Display "Powered by SmartMoney77" below embedded calculators', 'smartmoney77-financial-calculators' ); ?>
 		</label>
 		<?php
 	}

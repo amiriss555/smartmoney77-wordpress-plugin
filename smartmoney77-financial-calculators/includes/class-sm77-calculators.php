@@ -252,7 +252,7 @@ function sm77_get_defaults() {
 	return array(
 		'default_lang'     => 'auto',
 		'default_height'   => 700,
-		'show_credit'      => 1,
+		'show_credit'      => 0,
 		'default_currency' => '',
 	);
 }

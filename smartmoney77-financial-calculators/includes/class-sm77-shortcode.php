@@ -139,7 +139,7 @@ class SM77_Shortcode {
 		$output .= '</iframe>';
 
 		// Credit link.
-		$show_credit = ! isset( $settings['show_credit'] ) || ! empty( $settings['show_credit'] );
+		$show_credit = ! empty( $settings['show_credit'] );
 		if ( $show_credit ) {
 			$output .= '<p style="text-align:center;margin-top:8px;font-size:13px;opacity:0.7;">';
 			$output .= esc_html__( 'Powered by', 'smartmoney77-financial-calculators' ) . ' ';
