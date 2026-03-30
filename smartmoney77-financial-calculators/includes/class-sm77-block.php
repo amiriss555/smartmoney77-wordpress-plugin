@@ -52,6 +52,16 @@ class SM77_Block {
 				'render_callback' => array( __CLASS__, 'render_block' ),
 			)
 		);
+
+		// Pass pro status to block JS.
+		wp_localize_script(
+			'smartmoney77-calculator-editor-script',
+			'sm77Data',
+			array(
+				'isPro'  => sm77_is_pro_active(),
+				'proUrl' => sm77_get_pro_url(),
+			)
+		);
 	}
 
 	/**
@@ -79,6 +89,21 @@ class SM77_Block {
 						'smartmoney77-financial-calculators'
 					)
 					. '</p>';
+			}
+			return '';
+		}
+
+		// Check Pro access.
+		if ( sm77_is_pro_calculator( $calculator ) && ! sm77_is_pro_active() ) {
+			if ( current_user_can( 'edit_posts' ) ) {
+				return '<p style="color:#d63638;font-weight:bold;">'
+					. esc_html__(
+						'SmartMoney77: This calculator requires the Pro addon.',
+						'smartmoney77-financial-calculators'
+					)
+					. ' <a href="' . esc_url( sm77_get_pro_url() ) . '" target="_blank" rel="noopener noreferrer">'
+					. esc_html__( 'Upgrade to Pro', 'smartmoney77-financial-calculators' )
+					. '</a></p>';
 			}
 			return '';
 		}

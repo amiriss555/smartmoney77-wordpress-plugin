@@ -25,111 +25,289 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Returns the full calculator registry.
+ * Check whether the Pro addon is active.
+ *
+ * @return bool
+ */
+function sm77_is_pro_active() {
+	return class_exists( 'SM77_Pro' );
+}
+
+/**
+ * Returns the full calculator registry (31 calculators).
  *
  * @return array Associative array of calculator slug => data.
  */
 function sm77_get_calculators() {
 	return array(
+
+		// ── Financial Planning (free) ─────────────────────────────────
+
 		'latte-factor'      => array(
 			'name'   => 'Latte Factor Calculator',
-			'key'    => 'latte',
 			'height' => 600,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'fire-number'       => array(
 			'name'   => 'FIRE Number Calculator',
-			'key'    => 'fire',
 			'height' => 800,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'cost-of-waiting'   => array(
 			'name'   => 'Cost of Waiting Calculator',
-			'key'    => 'waiting',
 			'height' => 700,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'young-millionaire' => array(
 			'name'   => 'Young Millionaire Calculator',
-			'key'    => 'youngMillionaire',
 			'height' => 700,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'inflation-check'   => array(
 			'name'   => 'Inflation Check Calculator',
-			'key'    => 'inflation',
 			'height' => 700,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'compound-interest' => array(
 			'name'   => 'Compound Interest Calculator',
-			'key'    => 'compound',
 			'height' => 700,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'killer-fees'       => array(
 			'name'   => 'Killer Fees Calculator',
-			'key'    => 'fees',
 			'height' => 700,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'education-roi'     => array(
 			'name'   => 'Education ROI Calculator',
-			'key'    => 'education',
 			'height' => 800,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'work-hours'        => array(
 			'name'   => 'Work Hours Calculator',
-			'key'    => 'workHours',
 			'height' => 700,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'housing-vs-stocks' => array(
 			'name'   => 'Housing vs. Stocks Calculator',
-			'key'    => 'housing',
 			'height' => 800,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'digital-nomad'     => array(
 			'name'   => 'Digital Nomad Calculator',
-			'key'    => 'nomad',
 			'height' => 800,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'zakat-calculator'  => array(
 			'name'   => 'Zakat Calculator',
-			'key'    => 'zakat',
 			'height' => 700,
-			'group'  => 'islamic',
+			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'en', 'ar', 'in' ),
 		),
 		'credit-card'       => array(
 			'name'   => 'Credit Card Calculator',
-			'key'    => 'creditCard',
 			'height' => 800,
 			'group'  => 'financial',
+			'pro'    => false,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 		'emergency-fund'    => array(
 			'name'   => 'Emergency Fund Calculator',
-			'key'    => 'emergencyFund',
 			'height' => 800,
 			'group'  => 'financial',
+			'pro'    => false,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+
+		// ── Stocks & Indices (Pro) ───────────────────────────────────
+
+		'sp500-history'            => array(
+			'name'   => 'S&P 500 History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'nasdaq100-history'        => array(
+			'name'   => 'NASDAQ 100 History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'nvidia-stock-history'     => array(
+			'name'   => 'NVIDIA Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'microsoft-stock-history'  => array(
+			'name'   => 'Microsoft Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'meta-stock-history'       => array(
+			'name'   => 'Meta Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'apple-stock-history'      => array(
+			'name'   => 'Apple Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'tesla-stock-history'      => array(
+			'name'   => 'Tesla Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'amazon-stock-history'     => array(
+			'name'   => 'Amazon Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'google-stock-history'     => array(
+			'name'   => 'Google Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'netflix-stock-history'    => array(
+			'name'   => 'Netflix Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'amd-stock-history'        => array(
+			'name'   => 'AMD Stock History',
+			'height' => 800,
+			'group'  => 'stocks',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+
+		// ── Crypto (Pro) ─────────────────────────────────────────────
+
+		'bitcoin-history'  => array(
+			'name'   => 'Bitcoin History',
+			'height' => 800,
+			'group'  => 'crypto',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'ethereum-history' => array(
+			'name'   => 'Ethereum History',
+			'height' => 800,
+			'group'  => 'crypto',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'solana-history'   => array(
+			'name'   => 'Solana History',
+			'height' => 800,
+			'group'  => 'crypto',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+
+		// ── Commodities (Pro) ────────────────────────────────────────
+
+		'gold-history'   => array(
+			'name'   => 'Gold Price History',
+			'height' => 800,
+			'group'  => 'commodities',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'silver-history' => array(
+			'name'   => 'Silver Price History',
+			'height' => 800,
+			'group'  => 'commodities',
+			'pro'    => true,
+			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
+		),
+		'oil-history'    => array(
+			'name'   => 'Oil Price History',
+			'height' => 800,
+			'group'  => 'commodities',
+			'pro'    => true,
 			'langs'  => array( 'he', 'en', 'ar', 'es', 'pt', 'in' ),
 		),
 	);
+}
+
+/**
+ * Get category labels for display.
+ *
+ * @return array Associative array of group key => translated label.
+ */
+function sm77_get_category_labels() {
+	return array(
+		'financial'   => __( 'Financial Planning', 'smartmoney77-financial-calculators' ),
+		'stocks'      => __( 'Stocks & Indices', 'smartmoney77-financial-calculators' ),
+		'crypto'      => __( 'Crypto', 'smartmoney77-financial-calculators' ),
+		'commodities' => __( 'Commodities', 'smartmoney77-financial-calculators' ),
+	);
+}
+
+/**
+ * Check if a calculator requires Pro.
+ *
+ * @param string $slug Calculator slug.
+ * @return bool
+ */
+function sm77_is_pro_calculator( $slug ) {
+	$calcs = sm77_get_calculators();
+	return isset( $calcs[ $slug ] ) && ! empty( $calcs[ $slug ]['pro'] );
+}
+
+/**
+ * Check if a calculator is available (free or pro is active).
+ *
+ * @param string $slug Calculator slug.
+ * @return bool
+ */
+function sm77_is_calculator_available( $slug ) {
+	if ( ! sm77_is_pro_calculator( $slug ) ) {
+		return true;
+	}
+	return sm77_is_pro_active();
 }
 
 /**
@@ -255,4 +433,13 @@ function sm77_get_defaults() {
 		'show_credit'      => 0,
 		'default_currency' => '',
 	);
+}
+
+/**
+ * Get the Pro upgrade URL.
+ *
+ * @return string URL to the Pro upgrade page.
+ */
+function sm77_get_pro_url() {
+	return 'https://smartmoney77.com/en/wordpress-pro';
 }

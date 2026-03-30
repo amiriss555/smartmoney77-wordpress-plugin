@@ -184,7 +184,7 @@ class SM77_Settings {
 		<input type="number" name="sm77_settings[default_height]" id="sm77_default_height"
 			value="<?php echo esc_attr( $height ); ?>" min="400" max="1500" step="50" class="small-text">
 		<p class="description">
-			<?php esc_html_e( 'Default iframe height in pixels. Each calculator has its own recommended height which takes priority unless overridden.', 'smartmoney77-financial-calculators' ); ?>
+			<?php esc_html_e( 'Default iframe height in pixels. Each calculator has its own recommended height which is used as fallback.', 'smartmoney77-financial-calculators' ); ?>
 		</p>
 		<?php
 	}
@@ -233,7 +233,21 @@ class SM77_Settings {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
-		$calcs = sm77_get_calculators();
+
+		$calcs           = sm77_get_calculators();
+		$category_labels = sm77_get_category_labels();
+		$is_pro          = sm77_is_pro_active();
+
+		// Group calculators by category.
+		$grouped = array();
+		foreach ( $calcs as $slug => $calc ) {
+			$category = isset( $calc['group'] ) ? $calc['group'] : 'other';
+			if ( ! isset( $grouped[ $category ] ) ) {
+				$grouped[ $category ] = array();
+			}
+			$grouped[ $category ][ $slug ] = $calc;
+		}
+
 		?>
 		<div class="wrap">
 			<h1><?php esc_html_e( 'SmartMoney77 Financial Calculators', 'smartmoney77-financial-calculators' ); ?></h1>
@@ -255,6 +269,21 @@ class SM77_Settings {
 				</p>
 			</div>
 
+			<?php if ( ! $is_pro ) : ?>
+				<div class="sm77-pro-banner" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:16px 20px;border-radius:8px;margin:16px 0;">
+					<p style="margin:0 0 8px;font-size:15px;font-weight:bold;">
+						<?php esc_html_e( 'Unlock 17 more calculators with SmartMoney77 Pro', 'smartmoney77-financial-calculators' ); ?>
+					</p>
+					<p style="margin:0 0 12px;opacity:0.9;">
+						<?php esc_html_e( 'Stocks, crypto, and commodities history calculators for your site.', 'smartmoney77-financial-calculators' ); ?>
+					</p>
+					<a href="<?php echo esc_url( sm77_get_pro_url() ); ?>" target="_blank" rel="noopener noreferrer"
+						style="display:inline-block;background:#fff;color:#764ba2;padding:8px 20px;border-radius:4px;text-decoration:none;font-weight:bold;">
+						<?php esc_html_e( 'Get Pro', 'smartmoney77-financial-calculators' ); ?>
+					</a>
+				</div>
+			<?php endif; ?>
+
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( 'sm77_settings_group' );
@@ -264,26 +293,46 @@ class SM77_Settings {
 			</form>
 
 			<h2><?php esc_html_e( 'Available Calculators', 'smartmoney77-financial-calculators' ); ?></h2>
-			<table class="widefat striped" style="max-width:800px;">
-				<thead>
-					<tr>
-						<th><?php esc_html_e( 'Calculator', 'smartmoney77-financial-calculators' ); ?></th>
-						<th><?php esc_html_e( 'Slug', 'smartmoney77-financial-calculators' ); ?></th>
-						<th><?php esc_html_e( 'Height', 'smartmoney77-financial-calculators' ); ?></th>
-						<th><?php esc_html_e( 'Languages', 'smartmoney77-financial-calculators' ); ?></th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ( $calcs as $slug => $calc ) : ?>
+
+			<?php foreach ( $grouped as $category => $category_calcs ) : ?>
+				<h3>
+					<?php
+					$label = isset( $category_labels[ $category ] ) ? $category_labels[ $category ] : ucfirst( $category );
+					echo esc_html( $label );
+
+					// Show Pro badge for non-financial categories.
+					$first_calc = reset( $category_calcs );
+					if ( ! empty( $first_calc['pro'] ) && ! $is_pro ) :
+						?>
+						<span style="background:#764ba2;color:#fff;font-size:11px;padding:2px 8px;border-radius:3px;margin-left:8px;vertical-align:middle;">PRO</span>
+					<?php endif; ?>
+				</h3>
+				<table class="widefat striped" style="max-width:800px;margin-bottom:20px;">
+					<thead>
 						<tr>
-							<td><?php echo esc_html( $calc['name'] ); ?></td>
-							<td><code><?php echo esc_html( $slug ); ?></code></td>
-							<td><?php echo esc_html( $calc['height'] ); ?>px</td>
-							<td><?php echo esc_html( implode( ', ', $calc['langs'] ) ); ?></td>
+							<th><?php esc_html_e( 'Calculator', 'smartmoney77-financial-calculators' ); ?></th>
+							<th><?php esc_html_e( 'Slug', 'smartmoney77-financial-calculators' ); ?></th>
+							<th><?php esc_html_e( 'Height', 'smartmoney77-financial-calculators' ); ?></th>
+							<th><?php esc_html_e( 'Languages', 'smartmoney77-financial-calculators' ); ?></th>
 						</tr>
-					<?php endforeach; ?>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<?php foreach ( $category_calcs as $slug => $calc ) : ?>
+							<tr<?php echo ( ! empty( $calc['pro'] ) && ! $is_pro ) ? ' style="opacity:0.5;"' : ''; ?>>
+								<td>
+									<?php echo esc_html( $calc['name'] ); ?>
+									<?php if ( ! empty( $calc['pro'] ) && ! $is_pro ) : ?>
+										<span style="color:#764ba2;font-size:11px;">&#128274;</span>
+									<?php endif; ?>
+								</td>
+								<td><code><?php echo esc_html( $slug ); ?></code></td>
+								<td><?php echo esc_html( $calc['height'] ); ?>px</td>
+								<td><?php echo esc_html( implode( ', ', $calc['langs'] ) ); ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			<?php endforeach; ?>
 
 			<p style="margin-top:16px;color:#646970;">
 				<?php

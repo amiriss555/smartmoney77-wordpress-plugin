@@ -20,24 +20,55 @@
 	var __              = i18n.__;
 	var ServerSideRender = serverSideRender;
 
+	var isPro  = ( window.sm77Data && window.sm77Data.isPro ) || false;
+	var proUrl = ( window.sm77Data && window.sm77Data.proUrl ) || 'https://smartmoney77.com/en/wordpress-pro';
+
 	/**
 	 * Calculator registry — must match PHP sm77_get_calculators().
 	 */
 	var calculators = {
-		'latte-factor':      { name: 'Latte Factor Calculator',      height: 600, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'fire-number':       { name: 'FIRE Number Calculator',       height: 800, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'cost-of-waiting':   { name: 'Cost of Waiting Calculator',   height: 700, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'young-millionaire': { name: 'Young Millionaire Calculator', height: 700, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'inflation-check':   { name: 'Inflation Check Calculator',   height: 700, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'compound-interest': { name: 'Compound Interest Calculator', height: 700, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'killer-fees':       { name: 'Killer Fees Calculator',       height: 700, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'education-roi':     { name: 'Education ROI Calculator',     height: 800, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'work-hours':        { name: 'Work Hours Calculator',        height: 700, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'housing-vs-stocks': { name: 'Housing vs. Stocks Calculator', height: 800, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'digital-nomad':     { name: 'Digital Nomad Calculator',     height: 800, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'zakat-calculator':  { name: 'Zakat Calculator',             height: 700, group: 'islamic',   langs: [ 'en', 'ar', 'in' ] },
-		'credit-card':       { name: 'Credit Card Calculator',       height: 800, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
-		'emergency-fund':    { name: 'Emergency Fund Calculator',    height: 800, group: 'financial', langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] }
+		// Financial Planning (free)
+		'latte-factor':      { name: 'Latte Factor Calculator',      height: 600, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'fire-number':       { name: 'FIRE Number Calculator',       height: 800, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'cost-of-waiting':   { name: 'Cost of Waiting Calculator',   height: 700, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'young-millionaire': { name: 'Young Millionaire Calculator', height: 700, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'inflation-check':   { name: 'Inflation Check Calculator',   height: 700, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'compound-interest': { name: 'Compound Interest Calculator', height: 700, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'killer-fees':       { name: 'Killer Fees Calculator',       height: 700, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'education-roi':     { name: 'Education ROI Calculator',     height: 800, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'work-hours':        { name: 'Work Hours Calculator',        height: 700, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'housing-vs-stocks': { name: 'Housing vs. Stocks Calculator', height: 800, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'digital-nomad':     { name: 'Digital Nomad Calculator',     height: 800, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'zakat-calculator':  { name: 'Zakat Calculator',             height: 700, group: 'financial', pro: false, langs: [ 'en', 'ar', 'in' ] },
+		'credit-card':       { name: 'Credit Card Calculator',       height: 800, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'emergency-fund':    { name: 'Emergency Fund Calculator',    height: 800, group: 'financial', pro: false, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		// Stocks & Indices (Pro)
+		'sp500-history':           { name: 'S&P 500 History',           height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'nasdaq100-history':       { name: 'NASDAQ 100 History',        height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'nvidia-stock-history':    { name: 'NVIDIA Stock History',      height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'microsoft-stock-history': { name: 'Microsoft Stock History',   height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'meta-stock-history':      { name: 'Meta Stock History',        height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'apple-stock-history':     { name: 'Apple Stock History',       height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'tesla-stock-history':     { name: 'Tesla Stock History',       height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'amazon-stock-history':    { name: 'Amazon Stock History',      height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'google-stock-history':    { name: 'Google Stock History',      height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'netflix-stock-history':   { name: 'Netflix Stock History',     height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'amd-stock-history':       { name: 'AMD Stock History',         height: 800, group: 'stocks', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		// Crypto (Pro)
+		'bitcoin-history':  { name: 'Bitcoin History',  height: 800, group: 'crypto', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'ethereum-history': { name: 'Ethereum History', height: 800, group: 'crypto', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'solana-history':   { name: 'Solana History',   height: 800, group: 'crypto', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		// Commodities (Pro)
+		'gold-history':   { name: 'Gold Price History',   height: 800, group: 'commodities', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'silver-history': { name: 'Silver Price History', height: 800, group: 'commodities', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] },
+		'oil-history':    { name: 'Oil Price History',    height: 800, group: 'commodities', pro: true, langs: [ 'he', 'en', 'ar', 'es', 'pt', 'in' ] }
+	};
+
+	var groupLabels = {
+		'financial':   __( 'Financial Planning', 'smartmoney77-financial-calculators' ),
+		'stocks':      __( 'Stocks & Indices', 'smartmoney77-financial-calculators' ) + ( isPro ? '' : ' (Pro)' ),
+		'crypto':      __( 'Crypto', 'smartmoney77-financial-calculators' ) + ( isPro ? '' : ' (Pro)' ),
+		'commodities': __( 'Commodities', 'smartmoney77-financial-calculators' ) + ( isPro ? '' : ' (Pro)' )
 	};
 
 	/**
@@ -48,24 +79,29 @@
 			{ label: __( '— Select a calculator —', 'smartmoney77-financial-calculators' ), value: '' }
 		];
 
-		// Financial Planning group.
-		var financialCalcs = [];
-		var islamicCalcs   = [];
-
+		var groups = {};
 		Object.keys( calculators ).forEach( function ( slug ) {
 			var calc = calculators[ slug ];
-			var item = { label: calc.name, value: slug };
-			if ( calc.group === 'islamic' ) {
-				islamicCalcs.push( item );
-			} else {
-				financialCalcs.push( item );
+			var group = calc.group;
+			if ( ! groups[ group ] ) {
+				groups[ group ] = [];
 			}
+			groups[ group ].push( { slug: slug, calc: calc } );
 		} );
 
-		options.push( { label: '— ' + __( 'Financial Planning', 'smartmoney77-financial-calculators' ) + ' —', value: '', disabled: true } );
-		options = options.concat( financialCalcs );
-		options.push( { label: '— ' + __( 'Islamic Finance', 'smartmoney77-financial-calculators' ) + ' —', value: '', disabled: true } );
-		options = options.concat( islamicCalcs );
+		var groupOrder = [ 'financial', 'stocks', 'crypto', 'commodities' ];
+		groupOrder.forEach( function ( group ) {
+			if ( ! groups[ group ] ) return;
+			var label = groupLabels[ group ] || group;
+			options.push( { label: '— ' + label + ' —', value: '', disabled: true } );
+			groups[ group ].forEach( function ( item ) {
+				var calcLabel = item.calc.name;
+				if ( item.calc.pro && ! isPro ) {
+					calcLabel += ' \uD83D\uDD12';
+				}
+				options.push( { label: calcLabel, value: item.slug } );
+			} );
+		} );
 
 		return options;
 	}
@@ -112,6 +148,12 @@
 				}
 			}
 
+			// Check if selected calculator is Pro-locked.
+			var proWarning = '';
+			if ( selectedCalc && selectedCalc.pro && ! isPro ) {
+				proWarning = __( 'This calculator requires the Pro addon.', 'smartmoney77-financial-calculators' );
+			}
+
 			var inspectorControls = el(
 				InspectorControls,
 				null,
@@ -126,6 +168,15 @@
 							setAttributes( { calculator: val } );
 						}
 					} ),
+					proWarning ? el(
+						Notice,
+						{ status: 'warning', isDismissible: false },
+						proWarning,
+						' ',
+						el( 'a', { href: proUrl, target: '_blank', rel: 'noopener noreferrer' },
+							__( 'Upgrade to Pro', 'smartmoney77-financial-calculators' )
+						)
+					) : null,
 					el( SelectControl, {
 						label: __( 'Language', 'smartmoney77-financial-calculators' ),
 						value: lang,

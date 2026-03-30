@@ -3,12 +3,12 @@ Contributors: amiriss, smartmoney77
 Tags: financial calculator, compound interest, fire calculator, investment, embed
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Embed 14 free multilingual financial calculators on your WordPress site. Supports 6 languages and 22 currencies.
+Embed 14 free multilingual financial calculators on your WordPress site. Pro addon available for stocks, crypto, and commodities. Supports 6 languages and 22 currencies.
 
 == Description ==
 
@@ -16,7 +16,7 @@ SmartMoney77 Financial Calculators lets you embed free, interactive financial to
 
 **Key Features:**
 
-* 14 embeddable financial calculators including compound interest, FIRE number, credit card payoff, and housing vs. stocks
+* 14 free embeddable financial calculators including compound interest, FIRE number, credit card payoff, and housing vs. stocks
 * 6 languages: English, Hebrew, Arabic, Spanish, Portuguese, and English-India
 * 22 currencies with locale-appropriate formatting
 * Gutenberg block with live preview and category-grouped dropdown
@@ -26,7 +26,17 @@ SmartMoney77 Financial Calculators lets you embed free, interactive financial to
 * Responsive design — works on all screen sizes
 * No account required — completely free
 
-**Available Calculators:**
+**Pro Addon — 17 Additional Calculators:**
+
+Unlock stocks, crypto, and commodities history calculators with the optional SmartMoney77 Pro addon:
+
+* Stocks & Indices: S&P 500, NASDAQ 100, NVIDIA, Microsoft, Meta, Apple, Tesla, Amazon, Google, Netflix, AMD
+* Crypto: Bitcoin, Ethereum, Solana
+* Commodities: Gold, Silver, Oil
+
+[Get SmartMoney77 Pro](https://smartmoney77.com/en/wordpress-pro)
+
+**Free Calculators:**
 
 * Latte Factor — how daily expenses compound over time
 * FIRE Number — financial independence target calculation
@@ -59,6 +69,8 @@ Use the Gutenberg block (search for "SmartMoney77" in the block inserter) or the
 3. Go to Settings → SmartMoney77 to configure defaults (optional)
 4. Add calculators to any page using the Gutenberg block or shortcode
 
+For Pro calculators, install and activate the SmartMoney77 Pro addon alongside this plugin.
+
 == Frequently Asked Questions ==
 
 = Do I need an account or API key? =
@@ -67,7 +79,7 @@ No. The plugin works immediately after activation with no registration required.
 
 = Is this plugin free? =
 
-Yes, completely free. SmartMoney77 is a free financial literacy platform.
+Yes, the 14 financial planning calculators are completely free. An optional Pro addon unlocks additional stocks, crypto, and commodities calculators.
 
 = What languages are supported? =
 
@@ -75,7 +87,7 @@ English, Hebrew, Arabic, Spanish, Portuguese, and English-India. The plugin auto
 
 = Can I customize the calculator height? =
 
-Yes, via the block settings or the shortcode `height` parameter. Each calculator has a recommended default height.
+Yes, via the block settings or the shortcode `height` parameter. The Default Height in Settings overrides per-calculator heights. Each calculator also has a recommended fallback height.
 
 = Does this plugin slow down my site? =
 
@@ -93,13 +105,13 @@ Yes, you can add as many calculator blocks or shortcodes as you like.
 
 Some calculators have additional scenario comparison sections. Enable them with `scenarios="1"` in the shortcode or the toggle in the block settings. This increases the recommended height to 1200px.
 
-= Why is there a "Powered by SmartMoney77" link? =
+= What is SmartMoney77 Pro? =
 
-SmartMoney77's embed terms require visible attribution when embedding their free calculators. The link is enabled by default to comply with these terms. You can disable it in Settings → SmartMoney77, but please note that the credit inside the calculator iframe itself must remain visible per SmartMoney77's terms of service.
+A separate addon plugin that unlocks 17 additional calculators: stocks and indices history (S&P 500, NASDAQ 100, NVIDIA, etc.), crypto history (Bitcoin, Ethereum, Solana), and commodities history (Gold, Silver, Oil). Available at smartmoney77.com.
 
 = Why are only 14 calculators available? =
 
-SmartMoney77 has 32 tools total, but only the 14 financial planning calculators are optimized for iframe embedding. Stock/crypto/commodity history calculators and the FOMO Challenge are available directly on smartmoney77.com.
+The 14 financial planning calculators are free. Additional calculators for stocks, crypto, and commodities are available with the SmartMoney77 Pro addon.
 
 == External Services ==
 
@@ -120,6 +132,12 @@ Data transmitted: No personal data is sent from your WordPress site to SmartMone
 
 == Changelog ==
 
+= 2.0.0 =
+* Added 17 Pro calculators (stocks, crypto, commodities) — requires Pro addon
+* Settings page now shows calculators grouped by category
+* Pro calculators shown as locked with upgrade link when Pro is not active
+* Pro addon detection via separate SmartMoney77 Pro plugin
+
 = 1.0.0 =
 * Initial release
 * 14 embeddable financial calculators
@@ -130,6 +148,9 @@ Data transmitted: No personal data is sent from your WordPress site to SmartMone
 * 6 languages, 22 currencies
 
 == Upgrade Notice ==
+
+= 2.0.0 =
+New: Pro addon support with 17 additional calculators for stocks, crypto, and commodities. Settings page now grouped by category. No breaking changes.
 
 = 1.0.0 =
 Initial release of SmartMoney77 Financial Calculators.

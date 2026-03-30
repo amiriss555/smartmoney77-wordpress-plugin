@@ -2,8 +2,8 @@
 /**
  * Plugin Name:       SmartMoney77 Financial Calculators
  * Plugin URI:        https://smartmoney77.com/en/embed
- * Description:       Embed 14 free multilingual financial calculators — compound interest, FIRE number, credit card payoff, stock history, and more. Supports 6 languages and 22 currencies.
- * Version:           1.0.0
+ * Description:       Embed 14 free multilingual financial calculators — compound interest, FIRE number, credit card payoff, and more. Supports 6 languages and 22 currencies. Pro addon available for stocks, crypto, and commodities.
+ * Version:           2.0.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Tested up to:      6.9
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SM77_VERSION', '1.0.0' );
+define( 'SM77_VERSION', '2.0.0' );
 define( 'SM77_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SM77_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'SM77_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
