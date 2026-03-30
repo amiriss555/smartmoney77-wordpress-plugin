@@ -1,6 +1,6 @@
 === SmartMoney77 Financial Calculators ===
 Contributors: amiriss, smartmoney77
-Tags: financial calculator, compound interest, fire calculator, investment, embed
+Tags: financial calculator, compound interest, fire calculator, investment, financial literacy
 Requires at least: 6.0
 Tested up to: 6.9
 Stable tag: 2.0.0
